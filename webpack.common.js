@@ -1,5 +1,5 @@
 const path = require('path');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -20,17 +20,16 @@ module.exports = {
           }],
           '@babel/preset-react',
         ],
-        plugins: [
-          'react-refresh/babel',
-          '@babel/plugin-proposal-class-properties',
-        ],
+        // plugins: [
+        //   'react-refresh/babel',
+        // ],
       },
       exclude: path.join(__dirname, 'node_modules'),
     }],
   },
-  plugins: [
-    new ReactRefreshWebpackPlugin(),
-  ],
+  // plugins: [
+  //   new ReactRefreshWebpackPlugin(),
+  // ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
