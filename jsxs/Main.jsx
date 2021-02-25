@@ -7,7 +7,7 @@ import Movies from './Movies'
 const Main = () => {
 
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename='/What-Movie-Tonight'>
             <header style={{padding:'2vh 3vw',width:'94vw',height:'5vh'}}>
                 <Link to='/'>
                     <button className='header-left' style={{outline:'none',backgroundColor:'transparent',color:'white',transition:'all .2s',fontWeight:'bolder',textAlign:'center',float:'left',cursor:'pointer',width:'60px',height:'60px',borderRadius:'100%',border:'1px white solid'}}>
