@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, BrowserRouter } from "react-router-dom";
+import { Link, Route, HashRouter } from "react-router-dom";
 import Home from './Home'
 import Contact from './Contact'
 import Movies from './Movies'
@@ -7,7 +7,7 @@ import Movies from './Movies'
 const Main = () => {
 
     return (
-        <BrowserRouter basename='/What-Movie-Tonight'>
+        <HashRouter>
             <header style={{padding:'2vh 3vw',width:'94vw',height:'5vh'}}>
                 <Link to='/'>
                     <button className='header-left' style={{outline:'none',backgroundColor:'transparent',color:'white',transition:'all .2s',fontWeight:'bolder',textAlign:'center',float:'left',cursor:'pointer',width:'60px',height:'60px',borderRadius:'100%',border:'1px white solid'}}>
@@ -27,7 +27,7 @@ const Main = () => {
                 <Route path="/movies" component={Movies} />
                 <Route path="/contact" component={Contact} />
             </main>
-        </BrowserRouter>
+        </HashRouter>
     )
 };
 
