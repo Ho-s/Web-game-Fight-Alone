@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer } from 'react';
+import React, { useCallback, useEffect, useReducer,useRef } from 'react';
 
 const SET_ARRAY='SET_ARRAY'
 const SET_STYLE='SET_STYLE'
@@ -83,7 +83,6 @@ const Movies = () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a140e47a86a90b2ab39f034406c716a3&sort_by=vote_average.desc&page=${i}&vote_count.gte=1000`)
         .then(response => { return response.json() })
         .then((data) => {
-            console.log(data)
             Array(20).fill().map((v, i) => {
                 tempArray.push({
                     title: data.results[i].title,
@@ -292,7 +291,9 @@ const Movies = () => {
             <div style={{ float: 'left', width: '50%', height: '51vh' }}>
                 <ul style={{ margin: 0, padding: '0', position: 'absolute', top: '-40px', left: '-140px' }}>
                     {state.array[state.temp] && Array(20).fill().map((v, i) => {
-                        return <li  onClick={i === state.temp ? clickPoster : clickNext} key={i} style={{ opacity: state.style[i].opacity, transform: `perspective(600px) rotateY(${state.style[i].rotate}) scale(${state.style[i].scale})`, zIndex: state.style[i].zIndex, left: state.style[i].left, backgroundImage: `url(https://image.tmdb.org/t/p/original${state.array[i].posterpath})`, cursor: 'pointer', transition: ' all .6s', boxShadow: '-0.1px -0.1px 1px white', position: 'absolute', top: '0', listStyle: 'none', width: '360px', height: '540px', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '20px', WebkitBoxReflect: 'below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(250, 250, 250, 0.4)))' }}></li>
+                        return <li  onClick={i === state.temp ? clickPoster : clickNext} key={i} style={{ listStyle: 'none',}}>
+                            <img alt={`poster of ${state.array[i].title}`} src={`https://image.tmdb.org/t/p/original${state.array[i].posterpath}`} style={{ opacity: state.style[i].opacity, transform: `perspective(600px) rotateY(${state.style[i].rotate}) scale(${state.style[i].scale})`, zIndex: state.style[i].zIndex, left: state.style[i].left, cursor: 'pointer', transition: ' all .6s', boxShadow: '-0.1px -0.1px 1px white', position: 'absolute', top: '0', width: '360px', height: '540px', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '20px', WebkitBoxReflect: 'below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(250, 250, 250, 0.4)))' }}></img>
+                        </li>
                     })}
                 </ul>
             </div>
@@ -321,4 +322,67 @@ const Movies = () => {
     )
 };
 
+// const Movies = () => {
+
+//     const canvasRef=useRef()
+//     const imgRef=useRef()
+
+// 	const drawCanvas = function () {
+// 		const image = new Image();
+// 		const canvas = canvasRef.current
+//         const ctx=canvas?.getContext('2d')
+	
+//         if(ctx){
+//             canvas.width = 360;
+//             canvas.height = 540;
+//             canvas.backgroundColor = 'rgb(255, 255, 255)';
+            
+//             image.src = "https://image.tmdb.org/t/p/original/s0S2KXGRHxOYu8zCcV5p5sczw9d.jpg";
+            
+//             image.onload = function(){
+//                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                 ctx.drawImage(image, 0, 0, 360, 540);
+//             }
+
+//             // canvas.toBlob(function(blob) {
+//             //     const reader = new FileReader();
+//             //     reader.onload = function(e) {
+//             //         imgRef.current.src = reader.result;
+//             //     }
+//             //     reader.readAsDataURL(blob);
+//             // })
+//             canvas.toBlob(function(blob) {
+//                 var url = URL.createObjectURL(blob);
+//                 const img = document.getElementById('myimg');
+//                 imgRef.current.src = url;
+//                 imgRef.current.onload = function() {
+//                     URL.revokeObjectURL(this.src);
+//                 }
+//             });
+//         }
+// 	};
+
+//     useEffect(()=>{
+//         drawCanvas()
+//     },[])
+
+//     // canvas에 이미지를 draw
+//     // canvas.to.DataURL()로 변환
+//     // dataURL=>blob
+//     // blob=blob url
+
+//     return (
+//         <>
+//             <img ref={imgRef}></img>
+//             <canvas ref={canvasRef}></canvas>
+//         </>
+//     )
+// }
+
 export default Movies
+
+        // {state.array[state.temp] && Array(20).fill().map((v, i) => {
+        //     return <li key={i} style={{ listStyle: 'none',}}>
+        //         <img alt={`poster of ${state.array[i].title}`}  width= '360px' height= '540px' src={`https://image.tmdb.org/t/p/original${state.array[i].posterpath}`} style={{ cursor: 'pointer', transition: ' all .6s', boxShadow: '-0.1px -0.1px 1px white', position: 'absolute', top: '0',, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '20px', WebkitBoxReflect: 'below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(250, 250, 250, 0.4)))' }}></img>
+        //     </li>
+        // })}
