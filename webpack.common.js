@@ -1,9 +1,7 @@
 const path = require('path');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -17,30 +15,25 @@ module.exports = {
       options: {
         presets: [
           ['@babel/preset-env', {
-            targets: { browsers: ['last 2 chrome versions'] },
+            targets: "> 0.25%, not dead",
             debug: true,
           }],
           '@babel/preset-react',
         ],
-        plugins: [
-          'react-refresh/babel',
-          '@babel/plugin-proposal-class-properties',
-        ],
+        // plugins: [
+        //   'react-refresh/babel',
+        // ],
       },
       exclude: path.join(__dirname, 'node_modules'),
     }],
   },
-  plugins: [
-    new ReactRefreshWebpackPlugin(),
-  ],
+  // plugins: [
+  //   new ReactRefreshWebpackPlugin(),
+  // ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/dist',
   },
-  devServer: {
-    historyApiFallback: true,
-    publicPath: '/dist',
-    hot: true
-  }
+
 };

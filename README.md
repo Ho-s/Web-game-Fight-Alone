@@ -1,4 +1,4 @@
-# :clapper:Calendar Web App
+# :clapper:Calendar Web
 <img src='https://user-images.githubusercontent.com/71132893/109104840-1c505000-7770-11eb-9c9a-c1c79c345f4f.png' width='800px' height='400px'>
 <div align="center">  
 
