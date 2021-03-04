@@ -3,10 +3,10 @@ import React, { useRef, useEffect, useState } from 'react';
 
 const Contact = () => {
     const [browserWidth, setBrowerWidth] = useState(document.body.offsetWidth)
-    const [style,setStyle]=useState({width:0,height:0,transform:'translateY(65px)'})
+    const [style, setStyle] = useState({ width: 0, height: 0, transform: 'translateY(65px)' })
     const canvasRef = useRef()
 
-    const doTextAnimation=()=>{
+    const doTextAnimation = () => {
         let leon, canvas, ctx;
 
         let sw = browserWidth > 1000 ? 800 : 400;
@@ -62,10 +62,10 @@ const Contact = () => {
         init();
     }
 
-    const chageStyle=()=>{
-        setTimeout(()=>{
-            setStyle({...style,width:'160px',height:'160px',transform:'translateY(0)'})
-        },5500)
+    const chageStyle = () => {
+        setTimeout(() => {
+            setStyle({ ...style, width: '160px', height: '160px', transform: 'translateY(0)' })
+        }, 5500)
     }
 
     useEffect(() => {
@@ -76,34 +76,34 @@ const Contact = () => {
     return (
         <>
             <canvas style={{ transition: 'all 2s', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} ref={canvasRef}></canvas>
-            <div style={{top: '50%', left: '50%', transform: 'translate(-50%,-50%)'  ,position: 'absolute',  }}>
+            <div style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)', position: 'absolute', }}>
                 <div>
-                    <div style={{ transition:'all .4s',width: style.width, height: style.height, borderRadius: '100%', backgroundSize: '400px 260px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundImage: 'url(https://user-images.githubusercontent.com/71132893/103438501-ec586500-4c76-11eb-8914-28a85fa2cae7.jpg)' }}></div>
+                    <div style={{ transition: 'all .4s', width: style.width, height: style.height, borderRadius: '100%', backgroundSize: '400px 260px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundImage: 'url(https://user-images.githubusercontent.com/71132893/103438501-ec586500-4c76-11eb-8914-28a85fa2cae7.jpg)' }}></div>
                 </div>
-                <ul style={{padding:0,margin:0}}>
-                    <li style={{listStyle:'none',width:'65px',height:'20px',overflow:'hidden',margin:'10px auto'}}>
+                <ul style={{ padding: 0, margin: 0 }}>
+                    <li style={{ listStyle: 'none', width: '65px', height: '20px', overflow: 'hidden', margin: '10px auto' }}>
                         <a href='mailto:kjcoco13@gmail.com'>
-                            <div style={{transition:'all .4s',transitionDelay:'.3s',transform:style.transform,width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kjcoco13@gmail.com)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',backgroundPosition:'center' }}></div>
+                            <div style={{ transition: 'all .4s', transitionDelay: '.3s', transform: style.transform, width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kjcoco13@gmail.com)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                         </a>
                     </li>
-                    <li style={{listStyle:'none',width:'65px',height:'20px',overflow:'hidden',margin:'10px auto'}}>
+                    <li style={{ listStyle: 'none', width: '65px', height: '20px', overflow: 'hidden', margin: '10px auto' }}>
                         <a href='https://github.com/Ho-s'>
-                            <div style={{transition:'all .4s',transitionDelay:'.6s',transform:style.transform,width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Github-black?style=flat-square&logo=github)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' ,backgroundPosition:'center'}}></div>
+                            <div style={{ transition: 'all .4s', transitionDelay: '.6s', transform: style.transform, width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Github-black?style=flat-square&logo=github)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                         </a>
                     </li>
-                    <li style={{listStyle:'none',width:'65px',height:'20px',overflow:'hidden',margin:'10px auto'}}>
+                    <li style={{ listStyle: 'none', width: '65px', height: '20px', overflow: 'hidden', margin: '10px auto' }}>
                         <a href='http://qr.kakao.com/talk/Qs4iWKmmtszYlS_qLsk9msnspqs-'>
-                            <div style={{transition:'all .4s',transitionDelay:'.9s',transform:style.transform,width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Kakao-white?style=flat-square&logo=kakao)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',backgroundPosition:'center' }}></div>
+                            <div style={{ transition: 'all .4s', transitionDelay: '.9s', transform: style.transform, width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/Kakao-white?style=flat-square&logo=kakao)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                         </a>
                     </li>
-                    <li style={{listStyle:'none',width:'65px',height:'20px',overflow:'hidden',margin:'10px auto'}}>
+                    <li style={{ listStyle: 'none', width: '65px', height: '20px', overflow: 'hidden', margin: '10px auto' }}>
                         <a href='https://ho-space.netlify.app/'>
-                            <div style={{transition:'all .4s',transitionDelay:'1.2s',transform:style.transform,width: '65px', height: '20px', backgroundImage: 'url(http://img.shields.io/badge/-Blog-gray?style=flat-square&logo=gatsby&link=https://ho-space.netlify.app/)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',backgroundPosition:'center' }}></div>
+                            <div style={{ transition: 'all .4s', transitionDelay: '1.2s', transform: style.transform, width: '65px', height: '20px', backgroundImage: 'url(http://img.shields.io/badge/-Blog-gray?style=flat-square&logo=gatsby&link=https://ho-space.netlify.app/)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                         </a>
                     </li>
-                    <li style={{listStyle:'none',width:'65px',height:'20px',overflow:'hidden',margin:'10px auto'}}>
+                    <li style={{ listStyle: 'none', width: '65px', height: '20px', overflow: 'hidden', margin: '10px auto' }}>
                         <a href='https://www.facebook.com/byungho.joo.5/'>
-                            <div style={{transition:'all .4s',transitionDelay:'1.5s',transform:style.transform,width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/FBook-1877f2?style=flat-square&logo=facebook&logoColor=white&link=https://www.facebook.com/byungho.joo.5/)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',backgroundPosition:'center' }}></div>
+                            <div style={{ transition: 'all .4s', transitionDelay: '1.5s', transform: style.transform, width: '65px', height: '20px', backgroundImage: 'url(https://img.shields.io/badge/FBook-1877f2?style=flat-square&logo=facebook&logoColor=white&link=https://www.facebook.com/byungho.joo.5/)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                         </a>
                     </li>
                 </ul>

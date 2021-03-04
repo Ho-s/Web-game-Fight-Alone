@@ -1,25 +1,25 @@
-import React, { useState, useEffect,useRef,useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
-  
+
     useEffect(() => {
-      savedCallback.current = callback;
+        savedCallback.current = callback;
     }, [callback]);
-  
+
     useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-      if (delay !== null) {
-        let id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
+        function tick() {
+            savedCallback.current();
+        }
+        if (delay !== null) {
+            let id = setInterval(tick, delay);
+            return () => clearInterval(id);
+        }
     }, [delay]);
-  }
+}
 
 const Home = () => {
-    const [isRunning,setIsRunning]=useState(true)
+    const [isRunning, setIsRunning] = useState(true)
     const [temp, setTemp] = useState(0)
     const [number, setNumber] = useState(0)
     const [first, setFirst] = useState({ transform: '', top: '0', opacity: '0' })
@@ -28,7 +28,7 @@ const Home = () => {
     const [fourth, setFourth] = useState({ bottom: '0', right: '0', comment: '' })
     const [fifth, setFifth] = useState({ transform: '', opacity: '', comment: '' })
 
-    useInterval(()=>{
+    useInterval(() => {
         if (number < 2) {
             setTemp((prev) => { return prev + 1 })
             setTimeout(() => {
@@ -40,7 +40,7 @@ const Home = () => {
                 setNumber(0)
             }, 400)
         }
-    },isRunning ? [4000] : null)
+    }, isRunning ? [4000] : null)
 
     useEffect(() => {
         setIsRunning(false)
