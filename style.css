@@ -144,3 +144,45 @@ body, h1, h2, h3, h4, h5, h6, li, p,#nav li a, #topbar, input, button, select, t
 .movie-button:hover span{
     color: white;
 }
+
+.movie-top{
+    width: 80%;
+}
+
+.movie-top-description{
+    width: 50%;
+}
+
+/* 768
+
+1200 */
+
+@media screen and (max-width:1700px){
+    .movie-top{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1460px){
+    .movie-top{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1300px){
+    .movie-top-description{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .movie-top-description{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:928px){
+    .movie-top-description{
+        width: 20%;
+    }
+}

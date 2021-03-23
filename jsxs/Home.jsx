@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -77,7 +77,6 @@ const Home = () => {
                     setThird({ ...third, transform: 'scale(0.6)', opacity: '0', top: '-900px' })
                 }, 400))
             }
-
         } else if (temp === 1) {
             timer = []
             setSecond({ ...second, transform: 'scale(0.6)', opacity: '0', top: '900px' })

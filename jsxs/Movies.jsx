@@ -287,7 +287,7 @@ const Movies = () => {
     }, [state.temp])
 
     return (
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '80%' }}>
+        <div className='movie-top' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
             <div style={{ float: 'left', width: '50%', height: '51vh' }}>
                 <ul style={{ margin: 0, padding: '0', position: 'absolute', top: '-40px', left: '-140px' }}>
                     {state.array[state.temp] && Array(20).fill().map((v, i) => {
@@ -298,7 +298,7 @@ const Movies = () => {
                 </ul>
             </div>
             {state.array[state.now] &&
-                <div style={{ float: 'left', width: '40%', height: '51vh', color: 'white' }}>
+                <div className='movie-top-description' style={{ float: 'right',height: '51vh', color: 'white' }}>
                     <div style={{ overflow: 'hidden', height: '40px', fontSize: '30px', marginBottom: '30px', fontWeight: '600' }}>
                         <div style={{ transition: 'ease-in-out all .3s', opacity: state.fadeIn.opacity, transform: state.fadeIn.transform, }}>{state.now !== -1 ? state.array[state.now].title : ''}</div>
                     </div>
