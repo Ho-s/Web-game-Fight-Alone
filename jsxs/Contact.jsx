@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-
 const Contact = () => {
     const [browserWidth, setBrowerWidth] = useState(document.body.offsetWidth)
     const [style, setStyle] = useState({ width: 0, height: 0, transform: 'translateY(65px)' })
